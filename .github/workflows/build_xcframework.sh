@@ -28,6 +28,4 @@ create_xcframework()
 	fi
 }
 
-for f in LittleBlueTooth $(cat Frameworks.list); do
-	create_xcframework $f
-done
+create_xcframework MyLibraryActionTest
