@@ -40,12 +40,9 @@ jobs:
           set -euo pipefail
           sudo xcode-select -s /Applications/Xcode_${XCODE_VER}.app
           cd .github/workflows
-<<<<<<< HEAD
           ls
           ./build_xcframework.sh
-=======
           sudo ./build_xcframework.sh
->>>>>>> main
           cp ../../LICENSE .
           zip -9r MyLibraryActionTest.xcframeworks.zip *.xcframework LICENSE
       - name: Upload files to release draft
