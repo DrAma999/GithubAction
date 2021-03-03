@@ -1,9 +1,7 @@
 name: Create Release
 
 # Create XCFramework when a version is tagged
-on:
-  push:
-    tags: [main]
+on: push
 
 env:
   XCODE_VER: 12.4
