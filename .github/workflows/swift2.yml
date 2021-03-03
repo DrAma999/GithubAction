@@ -17,9 +17,9 @@ jobs:
     env:
       DEVELOPER_DIR: /Applications/Xcode_${{ matrix.xcode_version }}.app
     steps:
-      - name: Check out LittleBlueTooth
+      - name: Check out MyLibraryActionTest
         uses: actions/checkout@v2
-      - name: Build LittleBlueTooth
+      - name: Build MyLibraryActionTest
         run: |
           set -euo pipefail
           swift package clean
@@ -35,7 +35,7 @@ jobs:
     if: startsWith(github.ref, 'refs/tags/')
     runs-on: macos-latest
     steps:
-      - name: Check out LittleBluetooth
+      - name: Check out MyLibraryActionTest
         uses: actions/checkout@v2
       - name: Build XCFrameworks
         run: |
@@ -44,11 +44,11 @@ jobs:
           cd .github/workflows
           ./build_xcframework.sh
           cp ../../LICENSE .
-          zip -9r LittleBlueTooth.xcframeworks.zip *.xcframework LICENSE
+          zip -9r MyLibraryActionTest.xcframeworks.zip *.xcframework LICENSE
       - name: Upload files to release draft
         uses: marvinpinto/action-automatic-releases@latest
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           prerelease: false
           draft: true
-          files: Frameworks/LittleBlueTooth.xcframeworks.zip
+          files: Frameworks/MyLibraryActionTest.xcframeworks.zip
