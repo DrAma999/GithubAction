@@ -49,4 +49,4 @@ jobs:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           prerelease: false
           draft: true
-          files: /Carthage/Build/MyLibraryActionTest.xcframeworks.zip
+          files: Carthage/Build/MyLibraryActionTest.xcframeworks.zip
